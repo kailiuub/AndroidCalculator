@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import java.util.regex.Pattern;
 
+import me.grantland.widget.AutofitTextView;
+
 
 public class MainActivity extends AppCompatActivity {
-    private TextView tv;
+    //private TextView tv;
+    private AutofitTextView tv;
     private String display="";
     private String currentOperator=" ";
     private String previousOperator=" ";
@@ -21,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tv=(TextView)findViewById(R.id.resultView);
+        //tv=(TextView)findViewById(R.id.resultView);
+        tv=(AutofitTextView)findViewById(R.id.resultView);
         tv.setText(display);
     }
 
@@ -77,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         display = "";
         currentOperator=" ";
         previousOperator=" ";
+        numAllow = true;
     }
 
     protected void onClickClear(View v){
